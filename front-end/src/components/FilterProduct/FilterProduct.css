@@ -1,0 +1,58 @@
+.container-estoque {
+    display: flex;
+    width: 110%;
+    height: 100%;
+}
+
+.content {
+    position: relative;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    overflow-x: hidden;
+    margin-right: -2.6rem;
+    left: 0.6rem;
+}
+
+.content::-webkit-scrollbar {
+    display: none;
+}
+
+.content p {
+    opacity: 0.7;
+    margin: 0 auto;
+    margin-bottom: 8px;
+    font-size: 0.875rem;
+}
+
+.box-filter-product {
+    background-color: var(--fifth-color);
+    min-width: 320px;
+    padding: 1rem 0 32rem 1rem;
+    height: 110%;
+    border-radius: 1rem;
+}
+
+.container-filter {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 3px;
+    width: 96%;
+    padding: 4px 16px 4px 0;
+    margin-bottom: 2rem;
+}
+
+.price-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 96%;
+}
+
+.reset-filters {
+    margin-top: 1.5rem;
+    position: absolute;
+    text-align: center;
+    width: 90%;
+}

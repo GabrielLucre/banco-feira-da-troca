@@ -1,0 +1,8 @@
+.timeline-content {
+    background: var(--primary-color);
+    color: #000000;
+    width: 45dvw;
+    border-radius: 10px;
+    padding-top: 1px;
+    padding-bottom: 1rem;
+}

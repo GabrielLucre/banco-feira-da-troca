@@ -1,0 +1,134 @@
+.side-bar {
+  background-color: var(--third-color);
+  width: 20rem;
+  height: 95dvh;
+  padding: 30px 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: width 350ms;
+}
+
+.button-config {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+}
+
+#icon {
+  margin: 13px 0;
+  display: flex;
+  padding: 0 10px;
+  flex-direction: row;
+  border-radius: 8px;
+  justify-content: start;
+  align-items: center;
+  width: 90%;
+  height: 70px;
+  color: var(--second-color);
+  gap: 20px;
+
+  cursor: pointer;
+
+  transition: opacity 550ms;
+  transition: transform 350ms;
+}
+
+.buttons svg {
+  min-width: 40px;
+  min-height: 40px;
+  max-width: 40px;
+  max-height: 40px;
+}
+
+#icon path {
+  stroke: var(--second-color);
+}
+
+#selected {
+  margin: 13px 0;
+  display: flex;
+  padding: 0 10px;
+  flex-direction: row;
+  border-radius: 8px;
+  justify-content: start;
+  align-items: center;
+  width: 90%;
+  height: 70px;
+  color: var(--primary-color);
+  gap: 20px;
+  background-color: #ffffff2d;
+  box-shadow: 1px 1px 50px 1px rgba(0, 0, 0, 0.021);
+
+  cursor: pointer;
+
+  transition: opacity 550ms;
+  transition: background-color 600ms;
+  transition: transform 350ms;
+}
+
+#selected p {
+  font-size: 30px;
+  font-family: GilroyMedium;
+
+  transition: opacity 500ms;
+}
+
+#selected path {
+  stroke: var(--primary-color);
+  justify-content: center;
+}
+
+#icon p {
+  font-size: 30px;
+  font-family: 'GilroyMedium';
+
+  transition: opacity 500ms;
+}
+
+#icon:hover,
+#selected:hover {
+  transition: transform 350ms;
+  transform: scale(1.05);
+}
+
+.footerSideBar {
+  display: flex;
+  margin-top: auto;
+  margin-bottom: 18px;
+  width: 90%;
+  justify-content: center;
+}
+
+.accountSideBar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  padding: 0 10px;
+}
+
+.accountSideBar:hover {
+  cursor: pointer;
+}
+
+.logInButtonDiv {
+  display: flex;
+  width: 90%;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  font-size: 30px;
+  color: rgba(0, 0, 0, 0.445);
+}
+
+.logInButtonDiv:hover {
+  cursor: pointer;
+}
+
+.logInButtonDiv p {
+  margin: 0;
+}

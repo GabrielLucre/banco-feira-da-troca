@@ -1,0 +1,44 @@
+.carrinho {
+  color: var(--fourth-color);
+  font-family: "Alata", Arial;
+  display: flex;
+  flex-direction: column;
+}
+
+.carrinho h2 {
+  width: 100%;
+}
+
+.carrinhoProd {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding-bottom: 1rem;
+}
+
+.boxProduct {
+  padding: 5px 20px 10px;
+  width: 170px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 50px 1px rgba(0, 0, 0, 0.096);
+  transition-duration: 250ms;
+}
+
+.boxProduct p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.boxProduct:hover {
+  transform: scale(1.02);
+}
+
+.carHeader {
+  display: flex;
+  justify-content: center;
+}
+
+* {
+  font-family: "Alata", Arial;
+}

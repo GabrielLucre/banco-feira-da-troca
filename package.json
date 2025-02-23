@@ -1,0 +1,35 @@
+{
+  "name": "bancofeiradatroca",
+  "version": "1.0.0",
+  "description": "> Feira da Troca é um projeto anual, localizado em *Taquarituba SP,* especificamente na ***ETEC Profª Terezinha Monteiro dos Santos***, com o intuito de **ensinar a ser sustentável**. Sendo a realização de troca de itens que você já não vê mais utilidade para você, mas que pode haver para outra pessoa.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "cd front-end && npm install && echo 'Dependencias do Front-end instaladas' && cd .. && cd back-end && npm install && echo 'Dependencias do back-end instaladas' && cd .. && echo 'Tudo joia!'",
+    "front": "cd front-end && echo 'Ligando a parte do front-end!!' && npm run dev -- --host",
+    "back": "cd back-end/ && nodemon index.js",
+    "create-models": "cd back-end && node createmodels.js && cd .. && echo 'Models atualizados!'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FioriMartins/bancofeiradatroca.git"
+  },
+  "author": "Caio Fiori",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FioriMartins/bancofeiradatroca/issues"
+  },
+  "homepage": "https://github.com/FioriMartins/bancofeiradatroca#readme",
+  "dependencies": {
+    "@dnd-kit/core": "^6.3.1",
+    "@dnd-kit/sortable": "^10.0.0",
+    "@dnd-kit/utilities": "^3.2.2",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@formfacade/embed-react": "^1.1.2",
+    "@mui/lab": "^6.0.0-beta.25",
+    "@mui/x-charts-pro": "^7.23.2",
+    "firebase": "^11.2.0",
+    "jwt-decode": "^4.0.0",
+    "qrcode": "^1.5.4"
+  }
+}

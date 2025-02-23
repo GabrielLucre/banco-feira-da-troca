@@ -1,0 +1,77 @@
+/* pesquisa */
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.form-search {
+    display: flex;
+    flex-direction: row;
+    margin-left: 1rem;
+}
+
+/* comandas */
+
+.comandas {
+    display: flex;
+    flex-direction: row;
+    align-content: start;
+    overflow-y: auto;
+    height: 100dvh;
+    padding: 1rem 0 1rem 1rem;
+}
+
+.comandas::-webkit-scrollbar {
+    width: 0;
+}
+
+.boxComanda {
+    background-color: rgba(0, 128, 0, 0.113);
+    border: 2px solid rgb(92, 148, 92);
+    box-shadow: 1px 1px 50px 1px rgba(0, 0, 0, 0.041);
+    border-radius: 5px;
+    padding: 10px;
+    width: 170px;
+    height: 22px;
+    text-align: center;
+    transition: transform 250ms;
+}
+
+.boxComandaDesativa {
+    background-color: rgba(128, 0, 0, 0.113);
+    border: 2px solid rgb(148, 92, 92);
+    box-shadow: 1px 1px 50px 1px rgba(0, 0, 0, 0.041);
+    border-radius: 5px;
+    padding: 10px;
+    width: 170px;
+    height: 22px;
+    text-align: center;
+    transition: transform 250ms;
+    cursor: pointer;
+}
+
+.boxComanda:hover {
+    cursor: pointer;
+    transform: scale(1.04);
+}
+
+.boxComandaDesativa:hover {
+    cursor: pointer;
+    transform: scale(0.95);
+}
+
+.boxComanda p,
+.boxComandaDesativa p {
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.loading-comandas {
+    position: absolute;
+    top: 50%;
+    margin-left: 40%;
+}

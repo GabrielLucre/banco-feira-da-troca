@@ -1,0 +1,50 @@
+.allContentTransacoes {
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    overflow-x: hidden;
+    background-color: var(--fifth-color);
+    border-radius: 1rem;
+    margin-left: 1rem;
+    height: 100%;
+    min-width: 100%;
+}
+
+.allContentTransacoes::-webkit-scrollbar {
+    display: none;
+}
+
+.allContentTransacoes h1 {
+    padding: 10px;
+    margin: 15px 15px 0;
+}
+
+.log {
+    padding: 10px;
+    margin: 15px 30px 0;
+}
+
+.log:hover {
+    cursor: pointer;
+}
+
+.log p {
+    margin: 4px;
+}
+
+.log i {
+    font-size: 15px;
+    color: rgba(0, 0, 0, 0.486);
+}
+
+.log hr {
+    margin: 5px;
+    border-color: rgba(0, 0, 0, 0.185);
+}
+
+.timestamp {
+    width: 100%;
+    text-align: center;
+}

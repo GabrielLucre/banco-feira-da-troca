@@ -1,0 +1,45 @@
+.box-form-add-category-backdrop {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    width: 90%;
+    padding-right: 1.5rem;
+    padding-bottom: 1rem;
+    background: var(--sixth-color);
+    border-radius: 1rem;
+    max-height: 300px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.box-form-add-category-backdrop p {
+    margin-left: 1rem;
+}
+
+.MuiAutocomplete-popper {
+    z-index: 9999 !important;
+}
+
+.li-option-icon {
+    display: flex;
+    align-content: center;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.li-option-icon div {
+    padding: 6px 0 6px 9px;
+    width: 30px;
+    margin-right: 70%;
+}
+
+.form-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    padding-right: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}

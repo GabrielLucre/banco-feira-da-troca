@@ -1,0 +1,131 @@
+.right-container-caixas {
+    display: flex;
+    flex-direction: column;
+}
+
+.estoque-content-caixas {
+    position: relative;
+    width: 362px;
+    height: 100%;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    overflow-x: hidden;
+}
+
+.estoque-content-caixas::-webkit-scrollbar {
+    display: none;
+}
+
+.estoque-content-caixas #caixas-title {
+    opacity: 0.7;
+    margin: 0 auto;
+    font-size: 0.875rem;
+    padding-right: 16rem;
+}
+
+.box-caixas-estoque {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--fifth-color);
+    max-width: 300px;
+    height: 97.2%;
+    margin-left: 1rem;
+    padding: 1rem 1rem 0;
+    border-radius: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.caixas-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    overflow-x: hidden;
+    margin-top: 0.8rem;
+    margin-bottom: -0.2rem;
+}
+
+.caixas-list::-webkit-scrollbar {
+    display: none;
+}
+
+.caixa-box {
+    width: 300px;
+    min-height: 260px;
+    background-color: var(--sixth-color);
+    border-radius: 1rem;
+    transition: box-shadow 0.3s ease, transform 0.1s ease;
+    margin-bottom: 1rem;
+}
+
+.caixa-box:hover {
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.caixa-box:active {
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.15);
+}
+
+.disabled-box {
+    cursor: default;
+    pointer-events: none;
+    width: 300px;
+    min-height: 260px;
+    background-color: var(--sixth-color);
+    border-radius: 1rem;
+    transition: box-shadow 0.3s ease, transform 0.1s ease;
+    margin-bottom: 1rem;
+}
+
+.caixa {
+    width: 300px;
+    min-height: 162px;
+    background-color: var(--sixth-color);
+    border-radius: 1rem 1rem 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    overflow-x: hidden;
+}
+
+.caixa::-webkit-scrollbar {
+    display: none;
+}
+
+.container-bottom-box {
+    width: 300px;
+    height: 98px;
+    background-color: var(--sixth-color);
+    border-radius: 0 0 1rem 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.info-caixa {
+    display: flex;
+    align-items: center;
+}
+
+.buttons-caixa {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    opacity: 0.8;
+}
+
+.add-box {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: var(--fifth-color);
+}

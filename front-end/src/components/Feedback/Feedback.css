@@ -1,0 +1,100 @@
+.content-review {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px 0 0 15px;
+    overflow-y: auto;
+}
+
+.form-container {
+    background-color: #fff;
+    padding: 0 30px 30px 30px;
+    max-width: 540px;
+    width: 100%;
+    height: 400%;
+}
+
+.form-container h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #202124;
+    font-weight: lighter;
+    font-size: 26.25px;
+    margin-bottom: 14px;
+    padding: 30px 0 21px;
+}
+
+.form-container label {
+    font-size: 15.4px;
+    color: #202124;
+}
+
+.form-container .required-review {
+    font-weight: bold;
+    color: #ff0000;
+}
+
+.box-form-review {
+    margin-bottom: 2rem;
+}
+
+.answer-review {
+    margin-top: 8px;
+    margin-bottom: 2.5rem;
+}
+
+
+.box-form-review .answer-review div {
+    border: 1px solid #d3d3d3;
+    border-radius: 6px;
+    height: 2.7rem;
+    display: flex;
+    align-items: center;
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
+
+.box-form-review .answer-review input {
+    margin-right: 12px;
+    margin-left: 14px;
+    cursor: pointer;
+}
+
+.box-form-review .answer-review p {
+    font-size: 14px;
+    font-weight: 500;
+    padding-top: 1.8px;
+    color: #202020;
+}
+
+.open-answer-review {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2.5rem;
+    margin-top: 14px;
+    margin-bottom: 46px;
+}
+
+.open-answer-review textarea {
+    border-color: #d3d3d3;
+}
+
+.box-option {
+    display: flex;
+    align-items: center;
+    border: 1px solid #d3d3d3;
+    border-radius: 6px;
+    height: 2.7rem;
+    margin: 6px 0;
+    cursor: pointer;
+}
+
+.box-option input {
+    margin-right: 12px;
+    cursor: pointer;
+}
+
+.loading-feedback {
+    position: absolute;
+    top: 50%;
+}

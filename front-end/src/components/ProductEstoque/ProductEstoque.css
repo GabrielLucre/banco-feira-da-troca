@@ -1,0 +1,36 @@
+.container-estoque-produtos {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.estoque-content-produtos {
+    position: relative;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+.estoque-content-produtos::-webkit-scrollbar {
+    display: none;
+}
+
+.estoque-content-produtos p {
+    opacity: 0.7;
+    margin: 0 auto;
+    font-size: 0.875rem;
+    margin-left: -5px;
+    padding-left: 1rem;
+}
+
+.box-produtos-estoque {
+    position: relative;
+    background-color: var(--fifth-color);
+    padding: 1rem 1rem 0;
+    margin-left: 4.2rem;
+    height: 100%;
+    padding-bottom: 100000vmax;
+    border-radius: 1rem;
+}

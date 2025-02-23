@@ -1,0 +1,33 @@
+.formUser {
+    font-family: "Alata", Arial;
+    color: var(--fourth-color);
+    background-color: var(--fifth-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.formUser p,
+.formUser h2 {
+    margin: 0;
+}
+
+.inputoes {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.classUser {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#buttonEnviar {
+    background-color: var(--third-color);
+}
+
+.formUser h1 {
+    margin-top: 0;
+}

@@ -1,0 +1,39 @@
+﻿
+- Sete contas de ADM para cada sala, para que possam acessar os devidos produtos de sua sala
+
+- Sete caixas com um valor médio de moedas das moedas totais, separando uma porcentagem do total de produtos para o estoque
+
+- No dia irá ter pessoas reesposáveis por colocar os produtos na devida caixa da sala que esses produtos serão vendidos(o estoque)
+  - Precisamos ter uma página só para o pessoal do estoque, para que eles possam realizar a seleção dos produtos que irão para suas devidas caixas
+
+- Quando terminar a venda do produto, ele será deletado do banco (precisa mesmo?)
+
+- Plano B se der pau no banco: python ou NoSQL
+
+- Feature de chat(junto com notificações) para as pessoas se comunicarem mais facilmente
+
+- Logo BFT | BCFT | BFDT na fonte Sprite
+
+- Lojas poderem trocas produtos entre si, vai que falta produto em uma loja (sla)
+
+- Escolher layout nas configurações
+
+- Idioma/Idioma Preferido nas configurações
+
+- Senha/Login para comanda
+
+Problemas:
+- Achando site meio lento
+- Menos recarregamento de site === menos consulta no SQL
+- Refazer tela de gráficos
+- Rever a tela de Caixas
+- Chat
+
+Lugares que dá reload:
+- Desativar/Editar comanda
+- Adicionar comanda
+
+Lugares que precisa dar reload:
+- Criar categoria/subcategoria
+
+- Ao inves pegar todas as comandas (ativadas/desativadas) criar uma mascara para mostrar todas desativadas e trocas as desativadas pelas ativados com aquele ID

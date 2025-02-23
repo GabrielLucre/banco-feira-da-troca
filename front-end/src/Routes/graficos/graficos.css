@@ -1,0 +1,36 @@
+.contentGraficos {
+    display: flex;
+    width: 100%;
+    gap: 50px;
+    padding: 0 0 0 20px;
+}
+
+.headerDiv {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.graficosContentAll {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    background-color: var(--sixth-color);
+    padding: 25px;
+    border-radius: 14px;
+    align-items: center;
+}
+
+.optionsGraficos {
+    display: flex;
+    align-items: center;
+}
+
+.graficos {
+    width: 75%;
+}
+
+h4 {
+    color: rgba(0, 0, 0, 0.726);
+}

@@ -1,0 +1,19 @@
+.shortcuts-container {
+    background-color: var(--fifth-color);
+    border-radius: 1rem;
+    height: auto;
+    width: 100%;
+    margin-top: 1rem;
+    margin-left: 1rem;
+}
+
+.shortcuts-container.with-stock {
+    width: 92%;
+}
+
+.shortcuts {
+    display: flex;
+    justify-content: space-evenly;
+    padding-bottom: 0.4rem;
+    padding-top: 0.6rem;
+}

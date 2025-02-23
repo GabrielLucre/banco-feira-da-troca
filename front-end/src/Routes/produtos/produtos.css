@@ -1,0 +1,12 @@
+.conteudoTotal {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0 2rem 0 2rem;
+}
+
+.right-container-produtos {
+    display: flex;
+    flex-direction: column;
+}
