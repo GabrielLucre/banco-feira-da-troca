@@ -269,9 +269,6 @@ const Configuracao = () => {
                 </div>
                 <p>Daltonismo</p>
                 <Daltonismo currentTheme={currentTheme} />
-                {/* // * Mais útil para o site do que o sistema */}
-                {/* <p>FAQ</p>
-                <FAQ /> */}
                 <p>Contato de emergência</p>
                 <div style={{ marginBottom: '1rem', fontFamily: 'Arial', opacity: 0.8 }}>
                     <span style={{ marginLeft: '2px' }}>
@@ -282,11 +279,6 @@ const Configuracao = () => {
                         Gmail: gabriellucreg@gmail.com
                     </span>
                 </div>
-                {/* <div style={{ display: 'flex', flexDirection: 'row', marginTop: 'auto', position: 'absolute', bottom: 16, justifyContent: 'space-between', alignItems: 'center', width: '32%' }}>
-                    <p>Gabriel Lucrécio</p>
-                    <p>Caio Fiori</p>
-                    <p>Enzo Gabriel</p>
-                </div> */}
             </div>
         </div>
     );

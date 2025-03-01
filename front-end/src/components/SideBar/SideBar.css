@@ -21,7 +21,8 @@
 #icon {
   margin: 13px 0;
   display: flex;
-  padding: 0 10px;
+  padding: 0 20px;
+  margin-left: -10px;
   flex-direction: row;
   border-radius: 8px;
   justify-content: start;
@@ -38,10 +39,10 @@
 }
 
 .buttons svg {
-  min-width: 40px;
-  min-height: 40px;
-  max-width: 40px;
-  max-height: 40px;
+  min-width: 36px;
+  min-height: 36px;
+  max-width: 36px;
+  max-height: 36px;
 }
 
 #icon path {
@@ -51,7 +52,8 @@
 #selected {
   margin: 13px 0;
   display: flex;
-  padding: 0 10px;
+  padding: 0 20px;
+  margin-left: -10px;
   flex-direction: row;
   border-radius: 8px;
   justify-content: start;
@@ -71,7 +73,7 @@
 }
 
 #selected p {
-  font-size: 30px;
+  font-size: 23px;
   font-family: GilroyMedium;
 
   transition: opacity 500ms;
@@ -83,7 +85,7 @@
 }
 
 #icon p {
-  font-size: 30px;
+  font-size: 23px;
   font-family: 'GilroyMedium';
 
   transition: opacity 500ms;
