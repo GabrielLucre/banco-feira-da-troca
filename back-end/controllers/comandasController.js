@@ -4,7 +4,6 @@ const moment = require("moment");
 const { Sequelize, fn, Op, where } = require("sequelize");
 const models = initModels(sequelize);
 const log = require("../utils/logger");
-// const QRcode = require('qrcode')
 
 const {
   getDocs,
@@ -29,14 +28,13 @@ async function readComandas() {
     });
 
     return comandas;
-  } catch (err) {}
+  } catch (err) { }
 }
 
 async function readRegistros() {
   try {
     const registros = [];
     const querySnapshot = await getDocs(collection(db, "registro"));
-    // new Date(el.data_hora.seconds * 1000 + el.data_hora.nanoseconds / 1_000_000
     querySnapshot.forEach(async (doc) => {
       let form =
         doc.data().data_hora.seconds * 1000 +
@@ -50,7 +48,7 @@ async function readRegistros() {
     });
 
     return registros;
-  } catch (err) {}
+  } catch (err) { }
 }
 
 async function registro(comandaID, exData, tipo) {
@@ -93,7 +91,8 @@ const getRegistro = async (req, res) => {
 };
 
 const postComanda = async (req, res) => {
-  const { valueID, valueNome } = req.body;
+  const { valueID, valueNome, valueDate } = req.body;
+
   try {
     const referencia = doc(db, "comandas", valueID);
     const docSnap = await getDoc(referencia);
@@ -103,21 +102,20 @@ const postComanda = async (req, res) => {
 
       await updateDoc(referencia, {
         nome: valueNome,
+        data: valueDate,
         ativo: true,
         ultima_atualizacao: Timestamp.now(),
       });
-      res.json({
-        data: "OK",
-      });
+
+      res.json({ data: "OK" });
     } else {
-      console.error("Comanda já foi cadastrado por outro usuário.");
-      res.json({
-        status: 400,
-        error: "Houve um erro pois esta comanda não existe ou já esta ativa.",
+      res.status(400).json({
+        error: "Houve um erro pois esta comanda não existe ou já está ativa.",
       });
     }
   } catch (err) {
-    console.log(err);
+    console.error(err);
+    res.status(500).json({ error: "Erro no servidor" });
   }
 };
 
@@ -132,6 +130,7 @@ const disableComanda = async (req, res) => {
 
       await updateDoc(referencia, {
         nome: "Desconhecido",
+        data: "",
         ativo: false,
         saldo: 0,
         ultima_atualizacao: Timestamp.now(),

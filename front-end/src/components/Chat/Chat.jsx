@@ -6,13 +6,13 @@ import { useEffect, useRef, useState } from 'react';
 
 import Avatar from '@mui/material/Avatar';
 import IconButton from '@mui/material/IconButton';
-import { red, purple, deepPurple, indigo, cyan, lightGreen, orange, deepOrange } from '@mui/material/colors';
+import { cyan, deepOrange, deepPurple, indigo, lightGreen, orange, purple, red } from '@mui/material/colors';
 
 import AddReactionIcon from '@mui/icons-material/AddReaction';
 import SendIcon from '@mui/icons-material/Send';
 
 import { getUserData } from "../../../../back-end/utils/authUtils.js";
-import { listenMessages, sendMessage, listenMessagesBetweenUsers } from "../../lib/chatService";
+import { listenMessages, listenMessagesBetweenUsers, sendMessage } from "../../lib/chatService";
 
 import './Chat.css';
 
@@ -43,8 +43,11 @@ const Chat = ({ color, icon, selectedChat }) => {
             if (currentUser === "Admin") {
                 selectedChat === "Estoque" ? listenMessagesBetweenUsers(`3ds_${currentUser}`, setMessages) :
                     listenMessagesBetweenUsers(`${selectedChat}_${currentUser}`, setMessages);
+            } else if (currentUser === "3ds") {
+                listenMessagesBetweenUsers(`${selectedChat}_${currentUser}`, setMessages);
             } else {
-                listenMessagesBetweenUsers(`${currentUser}_${selectedChat}`, setMessages);
+                selectedChat === "Estoque" ? listenMessagesBetweenUsers(`${currentUser}_3ds`, setMessages)
+                    : listenMessagesBetweenUsers(`${currentUser}_${selectedChat}`, setMessages);
             }
         } else {
             listenMessages(selectedChat, setMessages);
@@ -59,7 +62,7 @@ const Chat = ({ color, icon, selectedChat }) => {
             if (selectedChat !== "Geral") {
                 currentUser === "Admin" ? selectedChat === "Estoque" ? await sendMessage(messageToSend, `3ds_${currentUser}`) :
                     await sendMessage(messageToSend, `${selectedChat}_${currentUser}`) :
-                    await sendMessage(messageToSend, `${currentUser}_${selectedChat}`);
+                    currentUser === "3ds" ? sendMessage(messageToSend, `${selectedChat}_${currentUser}`) : await sendMessage(messageToSend, `${currentUser}_${selectedChat}`);
             } else {
                 await sendMessage(messageToSend, selectedChat);
             }

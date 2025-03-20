@@ -34,6 +34,16 @@ function AppRoutes() {
             "--card-color1": "#12222a",
             "--card-color2": "#f9f9f9"
         },
+        PureBloom: {
+            "--primary-color": "#f7f6ed",
+            "--fifth-color": "#F2F0E9",
+            "--sixth-color": "#E5E2D7",
+            "--seventh-color": "#D8D3C5",
+            "--third-color": "#27C25D",
+            "--fourth-color": "#191917",
+            "--card-color1": "#191917",
+            "--card-color2": "#f7f6ed"
+        },
         DarkMeadow: {
             "--primary-color": "#E4E2DD",
             "--fifth-color": "#F6F4F2",

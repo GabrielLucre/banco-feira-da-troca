@@ -146,28 +146,25 @@ export default function FormUser({ subCategorias, total, setTotal, carrinho, set
                 </p>
                 <div className='inputoes'>
                     <Autocomplete
-                        value={dados.id}
+                        value={dados.id ? { id: dados.id, nome: dados.nome } : null}
                         id="free-solo-dialog-demo"
                         options={comandas}
                         getOptionLabel={(option) => {
-                            if (typeof option === "string") {
-                                return option;
-                            }
-                            if (option.inputValue) {
-                                return option.inputValue;
-                            }
-                            return option.id;
+                            if (!option) return "";
+                            return `${option.id} - ${option.nome}`;
                         }}
                         onChange={(event, newValue) => {
                             if (newValue === null) {
                                 setDados({
                                     ...dados,
                                     id: undefined,
+                                    nome: "",
                                 })
                             } else {
                                 setDados({
                                     ...dados,
                                     id: newValue.id,
+                                    nome: newValue.nome,
                                 })
                             }
                         }}
@@ -175,9 +172,9 @@ export default function FormUser({ subCategorias, total, setTotal, carrinho, set
                         clearOnBlur
                         handleHomeEndKeys
                         renderOption={(props, option) => {
-                            const { key, ...optionProps } = props;
+                            const { key, ...rest } = props;
                             return (
-                                <li key={key} {...optionProps}>
+                                <li key={option.id} {...rest}>
                                     {option.id} - {option.nome}
                                 </li>
                             );

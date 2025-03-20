@@ -36,6 +36,38 @@ const Daltonismo = ({ currentTheme }) => {
                 "--card-color2": "#f9f9f9"
             }
         },
+        PureBloom: {
+            protanopia: {
+                "--primary-color": "#e8e7dc",
+                "--third-color": "#6faa78",
+                "--fifth-color": "#F2F0E9",
+                "--sixth-color": "#E5E2D7",
+                "--seventh-color": "#D8D3C5",
+                "--fourth-color": "#191917",
+                "--card-color1": "#191917",
+                "--card-color2": "#f7f6ed"
+            },
+            deuteranopia: {
+                "--primary-color": "#d9e5dc",
+                "--third-color": "#59b378",
+                "--fifth-color": "#F2F0E9",
+                "--sixth-color": "#E5E2D7",
+                "--seventh-color": "#D8D3C5",
+                "--fourth-color": "#191917",
+                "--card-color1": "#191917",
+                "--card-color2": "#f7f6ed"
+            },
+            tritanopia: {
+                "--primary-color": "#cdeaf4",
+                "--third-color": "#43aac4",
+                "--fifth-color": "#F2F0E9",
+                "--sixth-color": "#E5E2D7",
+                "--seventh-color": "#D8D3C5",
+                "--fourth-color": "#191917",
+                "--card-color1": "#191917",
+                "--card-color2": "#f7f6ed"
+            }
+        },
         DarkMeadow: {
             protanopia: {
                 "--primary-color": "#e8e7dc",

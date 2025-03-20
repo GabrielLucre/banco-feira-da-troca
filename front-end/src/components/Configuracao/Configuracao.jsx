@@ -15,6 +15,11 @@ const Configuracao = () => {
             themeName: "ForestNight",
         },
         {
+            backgroundColor: "#191917",
+            colors: ["#27C25D", "#f7f6ed"],
+            themeName: "PureBloom",
+        },
+        {
             backgroundColor: "#2b2b2b",
             colors: ["#5DBA6A", "#e4e2dd"],
             themeName: "DarkMeadow",
@@ -86,6 +91,16 @@ const Configuracao = () => {
             "--fourth-color": "#12222a",
             "--card-color1": "#12222a",
             "--card-color2": "#f9f9f9"
+        },
+        PureBloom: {
+            "--primary-color": "#f7f6ed",
+            "--fifth-color": "#F2F0E9",
+            "--sixth-color": "#E5E2D7",
+            "--seventh-color": "#D8D3C5",
+            "--third-color": "#27C25D",
+            "--fourth-color": "#191917",
+            "--card-color1": "#191917",
+            "--card-color2": "#f7f6ed"
         },
         DarkMeadow: {
             "--primary-color": "#E4E2DD",
@@ -212,6 +227,7 @@ const Configuracao = () => {
     const setThemeColors = (theme) => {
         const root = document.documentElement;
         const colors = themeColors[theme];
+
         setCurrentTheme(theme);
         localStorage.setItem("selectedTheme", theme);
 

@@ -94,7 +94,7 @@
 #icon:hover,
 #selected:hover {
   transition: transform 350ms;
-  transform: scale(1.05);
+  transform: scale(1.10);
 }
 
 .footerSideBar {

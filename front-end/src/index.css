@@ -22,6 +22,8 @@ Accent (complemento)
 
     --card-color1: #12222a;
     --card-color2: #f9f9f9;
+
+    transition: color 0.3s ease;
 }
 
 /* 

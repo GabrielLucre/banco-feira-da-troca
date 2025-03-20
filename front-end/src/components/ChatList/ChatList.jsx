@@ -106,7 +106,10 @@ const ChatList = ({ handleCloseChatNav }) => {
                             user = user + 1;
                         };
 
-                        const chatMessage = messages.find(msg => getSecondWord(msg.chat) === chat);
+                        const chatMessage = messages.find(msg => getSecondWord(msg.chat) === chat && getFirstWord(msg.chat) === currentUser);
+                        const adminMessage = messages.find(msg => getFirstWord(msg.chat) === chat && getSecondWord(msg.chat) === currentUser);
+                        const estoqueMessage = messages.find(msg => getSecondWord(msg.chat) === "3ds" && getFirstWord(msg.chat) === currentUser);
+                        const geralMessage = messages.find(msg => getSecondWord(msg.chat) === "Geral");
 
                         return (
                             <div
@@ -122,20 +125,43 @@ const ChatList = ({ handleCloseChatNav }) => {
                                 <Avatar sx={{ bgcolor: color }}>{icon}</Avatar>
                                 <div className="texts">
                                     <span>{chat}</span>
-                                    {chatMessage && currentUser === getFirstWord(chatMessage.chat) ? (
-                                        <span className="last-message">
-                                            {chatMessage.sender}: {chatMessage.message.length > 30
-                                                ? chatMessage.message.slice(0, 25) + "..."
-                                                : chatMessage.message}
-                                        </span>
-                                    ) : chatMessage && chat === "Geral" ?
-                                        (
-                                            <span className="last-message">
-                                                {chatMessage.sender}: {chatMessage.message.length > 30
-                                                    ? chatMessage.message.slice(0, 25) + "..."
-                                                    : chatMessage.message}
-                                            </span>
-                                        ) : ""}
+                                    {currentUser === "Admin" || currentUser === "3ds" ?
+                                        adminMessage ?
+                                            (
+                                                <span className="last-message">
+                                                    {adminMessage.sender}: {adminMessage.message.length > 30
+                                                        ? adminMessage.message.slice(0, 25) + "..."
+                                                        : adminMessage.message}
+                                                </span>
+                                            ) : geralMessage && chat === "Geral" ?
+                                                (
+                                                    <span className="last-message">
+                                                        {geralMessage.sender}: {geralMessage.message.length > 30
+                                                            ? geralMessage.message.slice(0, 25) + "..."
+                                                            : geralMessage.message}
+                                                    </span>
+                                                ) : ""
+                                        : estoqueMessage && chat === "Estoque" ?
+                                            (
+                                                <span className="last-message">
+                                                    {estoqueMessage.sender}: {estoqueMessage.message.length > 30
+                                                        ? estoqueMessage.message.slice(0, 25) + "..."
+                                                        : estoqueMessage.message}
+                                                </span>
+                                            ) : chatMessage && currentUser === getFirstWord(chatMessage.chat) ? (
+                                                <span className="last-message">
+                                                    {chatMessage.sender}: {chatMessage.message.length > 30
+                                                        ? chatMessage.message.slice(0, 25) + "..."
+                                                        : chatMessage.message}
+                                                </span>
+                                            ) : geralMessage && chat === "Geral" ?
+                                                (
+                                                    <span className="last-message">
+                                                        {geralMessage.sender}: {geralMessage.message.length > 30
+                                                            ? geralMessage.message.slice(0, 25) + "..."
+                                                            : geralMessage.message}
+                                                    </span>
+                                                ) : ""}
                                 </div>
                             </div>
                         );

@@ -2,7 +2,7 @@
 /* eslint-disable react/prop-types */
 import axios from 'axios'
 import { doc, increment, updateDoc } from "firebase/firestore"
-import { useState } from "react"
+import { useState, useRef } from "react"
 import { dbComandas } from '../../lib/firebaseConfig.js'
 
 import SendRoundedIcon from '@mui/icons-material/SendRounded'
@@ -11,6 +11,7 @@ import Button from '@mui/material/Button'
 import TextField from "@mui/material/TextField"
 
 import Alerta from '../Alerta/Alerta.jsx'
+import ConfirmDate from '../ConfirmDate/ConfirmDate.jsx'
 
 import "../FormProduct/FormProduct.css"
 import '../FormUser/FormUser.css'
@@ -24,9 +25,10 @@ export default function FormUserSealing({ total, setTotal, carrinho, setCarrinho
     const [openAlertBalance, setOpenAlertBalance] = useState(false)
     const [openAlertSell, setOpenAlertSell] = useState(false)
     const [comandas, setComandas] = useState([])
+    const [openDate, setOpenDate] = useState(false)
 
     const handleSubmit = async (event) => {
-        event.preventDefault()
+        event.preventDefault();
         if (dados.saldo < total * -1) {
             setOpenAlertMoney(true)
             return
@@ -47,8 +49,6 @@ export default function FormUserSealing({ total, setTotal, carrinho, setCarrinho
                     valor: produto.valorProduto,
                     subcategoria: produto.subcategoriaID
                 }));
-
-            console.log(produtos)
 
             const response = await axios.put("http://localhost:3000/stock/edit", {
                 ids: ids.flat(),
@@ -115,7 +115,8 @@ export default function FormUserSealing({ total, setTotal, carrinho, setCarrinho
     const [dados, setDados] = useState({
         id: "",
         nome: "",
-        saldo: ""
+        saldo: "",
+        data: ""
     })
 
     const handleCloseBackdropButton = () => {
@@ -132,10 +133,24 @@ export default function FormUserSealing({ total, setTotal, carrinho, setCarrinho
         setOpenAlertSell(false)
     }
 
+    const formRef = useRef(null);
+
+    const hadleConfirmDate = () => {
+        setOpenDate(true)
+    }
+
+    const handleCloseBackdropButtonDate = (submit) => {
+        setOpenDate(false);
+
+        if (submit) {
+            formRef.current?.requestSubmit();
+        }
+    };
+
     return (
         <div className="formUser">
             <h1>Selecionar comanda</h1>
-            <form className="classUser" onSubmit={handleSubmit}>
+            <form ref={formRef} className="classUser" onSubmit={handleSubmit}>
                 <p style={{ height: '45px' }} >
                     ETC$: {carrinho.length === 0 ? " Não há nenhum item no carrinho." : total}
                 </p>
@@ -146,41 +161,39 @@ export default function FormUserSealing({ total, setTotal, carrinho, setCarrinho
                 }
                 <div className='inputoes'>
                     <Autocomplete
-                        value={dados.id}
-                        id="free-solo-dialog-demo"
+                        value={dados.id ? { id: dados.id, nome: dados.nome } : null}
                         options={comandas}
                         getOptionLabel={(option) => {
-                            if (typeof option === "string") {
-                                return option;
-                            }
-                            if (option.inputValue) {
-                                return option.inputValue;
-                            }
-                            return option.id;
+                            if (!option) return "";
+                            return `${option.id} - ${option.nome}`;
                         }}
                         onChange={(event, newValue) => {
                             if (newValue === null) {
                                 setDados({
                                     id: "",
                                     nome: "",
-                                    saldo: ""
-                                })
+                                    saldo: "",
+                                    data: ""
+                                });
                             } else {
+                                const dataFormatada = new Date(newValue.data).toLocaleDateString('pt-BR');
+
                                 setDados({
                                     ...dados,
                                     id: newValue.id,
                                     nome: newValue.nome,
-                                    saldo: newValue.saldo
-                                })
+                                    saldo: newValue.saldo,
+                                    data: dataFormatada
+                                });
                             }
                         }}
                         selectOnFocus
                         clearOnBlur
                         handleHomeEndKeys
                         renderOption={(props, option) => {
-                            const { key, ...optionProps } = props;
+                            const { key, ...rest } = props;
                             return (
-                                <li key={key} {...optionProps}>
+                                <li key={option.id} {...rest}>
                                     {option.id} - {option.nome}
                                 </li>
                             );
@@ -222,7 +235,8 @@ export default function FormUserSealing({ total, setTotal, carrinho, setCarrinho
                     />
                 </div>
                 <Button
-                    type="submit"
+                    type="button"
+                    onClick={hadleConfirmDate}
                     variant="contained"
                     endIcon={<SendRoundedIcon />}
                     id='buttonEnviar'
@@ -250,6 +264,7 @@ export default function FormUserSealing({ total, setTotal, carrinho, setCarrinho
             <div onClick={(e) => e.stopPropagation()}>
                 <Alerta state={openAlertMoney} onClose={handleCloseBackdropButton} text={`Saldo da comanda insuficiente`} severity="error" />
             </div>
+            {openDate && <ConfirmDate openOptions={openDate} handleCloseBackdropButton={handleCloseBackdropButtonDate} data={dados.data} />}
         </div>
     )
 }

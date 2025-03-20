@@ -157,3 +157,30 @@ body {
 .inputs p {
     width: 70px;
 }
+
+.relative {
+    display: flex;
+    flex-direction: row;
+}
+
+.relative input {
+    width: 80%;
+}
+
+.relative spam {
+    background-color: var(--card-color1);
+    color: var(--card-color2);
+    margin-bottom: -4px;
+    pointer-events: none;
+    user-select: none;
+    margin-left: -13%;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    opacity: 0;
+    position: absolute;
+    margin-left: 50%;
+    height: 2.3rem;
+    width: 2.3rem;
+    cursor: pointer;
+}
