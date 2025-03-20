@@ -1,6 +1,6 @@
 # Banco de Dados Feira da Troca
 
-Este projeto foi originalmente iniciado em colaboração com [Caio Fiori](https://github.com/FioriMartins/bancofeiradatroca) e, desde então, foi expandido com novas funcionalidades e melhorias.
+Este projeto foi originalmente iniciado em colaboração com [Caio Fiori](https://github.com/FioriMartins) e, desde então, foi expandido com novas funcionalidades e melhorias.
 
 Repositório original: [bancofeiradatroca](https://github.com/FioriMartins/bancofeiradatroca)
 
